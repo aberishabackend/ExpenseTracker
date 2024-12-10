@@ -1,0 +1,29 @@
+[
+  {
+    "id": 101,
+    "expenseType": 1,
+    "date": "2024-12-05",
+    "amount": 250.75,
+    "category": "Groceries",
+    "account": "Debit Card",
+    "note": "Weekly grocery shopping"
+  },
+  {
+    "id": 102,
+    "expenseType": 2,
+    "date": "2024-12-04",
+    "amount": 75.50,
+    "category": "Transport",
+    "account": "Cash",
+    "note": "Monthly bus pass"
+  },
+  {
+    "id": 103,
+    "expenseType": 1,
+    "date": "2024-12-03",
+    "amount": 15.00,
+    "category": "Entertainment",
+    "account": "Credit Card",
+    "note": "Movie ticket"
+  }
+]
