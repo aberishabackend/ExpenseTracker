@@ -1,4 +1,4 @@
-package org.example.model;
+package org.university.model;
 
 
 import jakarta.persistence.Entity;

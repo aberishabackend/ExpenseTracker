@@ -1,9 +1,8 @@
-package org.example.controller;
+package org.university.controller;
 
-import org.example.model.Expense;
-import org.example.service.ExpenseService;
+import org.university.model.Expense;
+import org.university.service.ExpenseService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
-package org.example.service;
+package org.university.service;
 
-import org.example.model.Expense;
-import org.example.utils.ExpenseDataLoader;
+import org.university.model.Expense;
+import org.university.utils.ExpenseDataLoader;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

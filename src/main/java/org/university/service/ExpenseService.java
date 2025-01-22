@@ -1,6 +1,6 @@
-package org.example.service;
+package org.university.service;
 
-import org.example.model.Expense;
+import org.university.model.Expense;
 
 import java.util.List;
 import java.util.Optional;

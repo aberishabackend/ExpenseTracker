@@ -1,7 +1,7 @@
-package org.example.service;
+package org.university.service;
 
-import org.example.model.Expense;
-import org.example.repository.ExpenseRepository;
+import org.university.model.Expense;
+import org.university.repository.ExpenseRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

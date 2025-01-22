@@ -1,9 +1,9 @@
-package org.example.utils;
+package org.university.utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
-import org.example.model.Expense;
+import org.university.model.Expense;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
