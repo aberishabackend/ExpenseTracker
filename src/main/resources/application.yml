@@ -4,7 +4,6 @@ server:
 spring:
   profiles:
     active: secret
-    include: db
   h2:
     console:
       enabled: true

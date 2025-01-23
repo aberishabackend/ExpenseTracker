@@ -3,6 +3,8 @@ package org.university.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name ="app_user")
@@ -14,4 +16,7 @@ public class AppUser {
     @Column(unique=true)
     private String username;
     private String password;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Expense> expenses;
 }
