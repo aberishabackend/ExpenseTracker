@@ -7,40 +7,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.university.dto.AppUserDTO;
 import org.university.dto.AuthDTO;
+import org.university.dto.AuthResponseDTO;
 import org.university.model.AppUser;
+import org.university.service.AuthService;
 import org.university.service.UserService;
 
 @RestController
 public class AuthController {
 
-    private final UserService userService;
-    private final PasswordEncoder passwordEncoder;
+    private final AuthService authService;
 
-    public AuthController(UserService userService, PasswordEncoder passwordEncoder) {
-        this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
+    public AuthController(AuthService authService) {
+        this.authService = authService;
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<String> signup(
+    public ResponseEntity<AuthResponseDTO> signup(
             @RequestBody AppUserDTO appUserDTO) {
+            AuthResponseDTO response = authService.registerUser(appUserDTO);
 
-        if(userService.findByUsername(appUserDTO.getUsername()) != null) {
-            return ResponseEntity.badRequest().body("Username is already in use");
-        }
-
-        AppUser appUser = new AppUser();
-        appUser.setFullName(appUserDTO.getFullName());
-        appUser.setUsername(appUserDTO.getUsername());
-        appUser.setPassword(passwordEncoder.encode(appUserDTO.getPassword()));
-
-        userService.saveUser(appUser);
-
-        return ResponseEntity.ok("Signup successful");
+            if("success".equals(response.getMessage())){
+                return ResponseEntity.ok(response);
+            }else {
+                return ResponseEntity.badRequest().body(response);
+            }
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody AuthDTO authDTO) {
-        return ResponseEntity.ok("Login successful (implementation pending)");
+    public ResponseEntity<AuthResponseDTO> login(@RequestBody AuthDTO authDTO) {
+        AuthResponseDTO response = authService.loginUser(authDTO);
+        if("success".equals(response.getMessage())){
+            return ResponseEntity.ok(response);
+        }else {
+            return ResponseEntity.badRequest().body(response);
+        }
     }
 }
