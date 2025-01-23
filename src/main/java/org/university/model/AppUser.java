@@ -19,4 +19,7 @@ public class AppUser {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Expense> expenses;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }

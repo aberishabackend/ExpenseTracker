@@ -10,6 +10,7 @@ import org.university.dto.AppUserDTO;
 import org.university.dto.AuthDTO;
 import org.university.dto.AuthResponseDTO;
 import org.university.model.AppUser;
+import org.university.model.Role;
 import org.university.utils.JwtUtil;
 
 @Service
@@ -39,6 +40,7 @@ public class AuthServiceImpl implements AuthService {
         appUser.setFullName(appUserDTO.getFullName());
         appUser.setUsername(appUserDTO.getUsername());
         appUser.setPassword(passwordEncoder.encode(appUserDTO.getPassword()));
+        appUser.setRole(Role.USER);
 
         userService.saveUser(appUser);
 
